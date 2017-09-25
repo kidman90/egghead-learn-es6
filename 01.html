@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Learn ES6 (ECMAScript 2015)</title>
+</head>
+
+<body>
+
+  <script>
+    var createGreeting = function (message, name) {
+      return message + name;
+    } 
+
+    // var arrowGreeting = (message, name) => {
+    //   return message + name;
+    // };
+
+    var arrowGreeting = (message, name) => message + name;
+
+    var arrowGreeting = message => message;
+
+    var squared = x => x * x;
+    console.log(squared(2));
+
+    var deliveryBoy = {
+      name: 'John',
+
+      handleMessage: function (message, handler) {
+        handler(message);
+      },
+
+      // receive: function () {
+      //   var that = this;
+
+      //   this.handleMessage('Hello, ', function (message) {
+      //     that.name; // get the proper name
+
+      //     console.log(message + that.name);
+      //   });
+      // }
+
+      receive: function () {
+        this.handleMessage('Hello, ', (message) => console.log(message + this.name));
+      }
+    };
+
+    deliveryBoy.receive();
+  </script>
+
+</body>
+
+</html>
