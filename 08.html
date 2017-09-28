@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Learn ES6 (ECMAScript 2015)</title>
+</head>
+
+<body>
+
+  <script>
+    var salutation = 'Hello';
+    // var greeting = salutation + ', World';
+    var greeting = `${salutation}, World`;
+
+    console.log(greeting);
+
+    var x = 1;
+    var y = 2;
+    var equation = `${x} + ${y} = ${x + y}`;
+
+    console.log(equation);
+
+    function tag(strings, ...values) {
+      // console.log(strings);
+      // console.log(values);
+      if (values[0] < 20) {
+        values[1] = 'awake';
+      } else {
+        values[1] = 'sleepy';
+      }
+      return `${strings[0]}${values[0]}${strings[1]}${values[1]}`;
+    }
+
+    var message = tag`It's ${new Date().getHours()} I'm ${''}`;
+
+    console.log(message);
+  </script>
+
+</body>
+
+</html>
